@@ -23,7 +23,7 @@
     /**
      * Handler status and message response.
      */
-    public function http_response_code(int $code = NULL, string $msj = NULL) 
+    private function http_response_code(int $code = NULL, string $msj = NULL) 
     {
       if ($code !== NULL) {
         switch ($code) {
@@ -86,7 +86,7 @@
     /**
      * Change content-type of header.
      */
-    protected function content_type(string $type) 
+    private function content_type(string $type) 
     {
       $charset = ';charset=UTF-8;';
       switch($type)

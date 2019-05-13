@@ -4,8 +4,4 @@
 
   interface RequestInterface 
   { 
-    /**
-     * 
-     */
-    public function __construct();
-  };
+  }

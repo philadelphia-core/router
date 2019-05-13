@@ -94,7 +94,7 @@
      */
     private function invalidMethodHandler() : void
     {
-      $this->response->http_response_code(405);
+      $this->response->status(405);
     }
 
     /**
@@ -104,7 +104,7 @@
      */
     private function defaultRequestHandler() : void
     {
-      $this->response->http_response_code(404);
+      $this->response->status(404);
     } 
 
     private function getUri($route) 
