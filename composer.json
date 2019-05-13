@@ -1,0 +1,25 @@
+{
+    "name": "philadelphia/router",
+    "description": "The Philadelphia Router package.",
+    "homepage": "https://philadelphia.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fernando Fernandez",
+            "email": "frfernandez1996@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=1.0.0",
+        "philadelphia/helpers": ">=1.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhiladelPhia\\Router\\": ""
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}
