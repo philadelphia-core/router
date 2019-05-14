@@ -207,7 +207,12 @@
       {
         $str = preg_replace('/[\/]/', '\/', substr($request, 1));
         preg_match('/['.$str.'-]+/', $key, $match);
-        
+
+        if (empty($match))
+        {
+          return false;
+        }
+
         if ($match[0] === $key) 
         {
           return call_user_func_array($fn, array($value, array($this->request, $this->response), $key)); 
