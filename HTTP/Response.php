@@ -116,6 +116,7 @@
       echo <<<HTML
         $html
 HTML;
+    return true;                 
     }
     
     /**
@@ -125,5 +126,6 @@ HTML;
     {
       $this->content_type('json');
       echo json_encode($args);
+      return true;
     }
   };

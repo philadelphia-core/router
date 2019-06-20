@@ -223,7 +223,7 @@
 
     private function _call_middleware() 
     {
-      $this->_match_method($this->{'middleware'}, function($fn, $args) {
+      return $this->_match_method($this->{'middleware'}, function($fn, $args) {
         return call_user_func_array($fn, $args);
       });
     }
@@ -248,7 +248,9 @@
       // Execute for method as ['middleware'].
       if (property_exists($this, 'middleware'))
       {
-        $this->_call_middleware();
+        if ($this->_call_middleware()) {
+          return;
+        }
       }
       // Execute for method as ['use'].
       if (property_exists($this, 'use'))
