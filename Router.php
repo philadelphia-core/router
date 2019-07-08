@@ -2,6 +2,15 @@
 
   namespace PhiladelPhia\Router;
 
+  header('Access-Control-Allow-Origin: *');
+  header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT, PATCH, OPTIONS');
+
+  if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    header('Access-Control-Allow-Headers: Content-Type, Authorization');
+    header('Access-Control-Max-Age: 1200');
+    die();
+  }
+
   use PhiladelPhia\Router\Interfaces\RouterInterface;
   use PhiladelPhia\Router\HTTP\Request;
   use PhiladelPhia\Router\HTTP\Response;
