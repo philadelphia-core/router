@@ -212,17 +212,18 @@
     private function _match_method($method, $fn)
     {
       $request = $this->formatRoute($this->request->requestUri);
+
       foreach($method as $key => $value) 
       {
-        $str = preg_replace('/[\/]/', '\/', substr($request, 1));
-        preg_match('/['.$str.'-]+/', $key, $match);
+        $word = substr($key, 1);
+        $keyword = preg_quote($word, '/');
+        preg_match("/".$keyword."/", $request, $match);
 
         if (empty($match))
         {
           return false;
         }
-
-        if ($match[0] === $key) 
+        else if ($match[0] === $word) 
         {
           return call_user_func_array($fn, array($value, array($this->request, $this->response), $key)); 
         }
